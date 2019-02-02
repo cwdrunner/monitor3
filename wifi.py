@@ -5,13 +5,15 @@
 from splinter.browser import Browser
 from time import sleep
 
-URL = 'http://192.168.1.1/user_login.asp'
+#URL = 'http://192.168.1.1/user_login.asp'
+URL = 'http://192.168.1.165:8082'
 NAME = 'admin'
 PASSWORD = '280dc932'
 
 
 def main():
-    br = Browser('firefox')
+    executable_path = {'executable_path':'/usr/lib/chromium-browser/chromedriver'}
+    br = Browser('chrome',**executable_path)
     br.visit(URL)
     sleep(3)
     if br.is_text_present('Password', wait_time=7):
