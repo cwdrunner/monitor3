@@ -5,8 +5,8 @@
 from splinter.browser import Browser
 from time import sleep
 
-#URL = 'http://192.168.1.1/user_login.asp'
-URL = 'http://192.168.1.165:8082'
+URL = 'http://192.168.1.1/user_login.asp'
+#URL = 'http://192.168.1.165:8082'
 NAME = 'admin'
 PASSWORD = '280dc932'
 

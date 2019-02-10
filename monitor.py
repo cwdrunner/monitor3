@@ -9,22 +9,22 @@ import subprocess
 from time import sleep
 from datetime import datetime
 
-PROCNAME = 'firefoxdriver'
-SLEEP_TIME = 1 * 60
+PROCNAME = 'chromedriver'
+SLEEP_TIME = 10 * 60
 
 
-def kill_firefoxdriver():
-    print('# killing firefoxdriver')
+def kill_browserdriver():
+    print('# killing ' + PROCNAME)
     for proc in psutil.process_iter():
         if proc.name == PROCNAME:
-            print('# Found firefoxdriver')
+            print('# Found ' + PROCNAME)
             proc.kill()
 
 
 def start_wifi():
     print('# restarting wifi ({now})'.format(now=datetime.now()))
     #   os.chdir('/home/jabba/bin.python')
-    process = subprocess.Popen("wifi.py", shell=True, stdout=subprocess.PIPE)
+    process = subprocess.Popen("python3 ./wifi.py", shell=True, stdout=subprocess.PIPE)
 
 
 def is_internet_on(method=2):
@@ -46,9 +46,9 @@ def main():
     while True:
         if not is_internet_on():
             print('# network is down')
-            kill_firefoxdriver()
+            kill_browserdriver()
             start_wifi()
-            kill_firefoxdriver()
+            kill_browserdriver()
         else:
             print('# network is up')
             pass
