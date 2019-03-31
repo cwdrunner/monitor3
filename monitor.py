@@ -34,9 +34,13 @@ def is_internet_on(method=2):
         # http://stackoverflow.com/questions/3764291/checking-network-connection
         try:
             http = urllib3.PoolManager()
-            http.request('GET', 'http://www.google.com', timeout=1, retries=False)
+            http.request('GET', 'http://www.google.com', timeout=5, retries=True)
             return True
         except urllib3.exceptions.NewConnectionError:
+            return False
+        except urllib3.exceptions.TimeoutError:
+            return False
+        except:
             return False
     else:
         print('# warning: unknown method in is_internet_on()')

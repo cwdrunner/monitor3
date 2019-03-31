@@ -15,13 +15,14 @@ def main():
     executable_path = {'executable_path':'/usr/lib/chromium-browser/chromedriver'}
     br = Browser('chrome',**executable_path)
     br.visit(URL)
-    sleep(3)
+    sleep(5)
     if br.is_text_present('Password', wait_time=7):
         br.fill('userpass', PASSWORD)
         br.find_by_css('#LoginButton').first.click()
-    sleep(3)
+    sleep(5)
     if br.is_text_present('Connect', wait_time=7):
         br.find_by_id('#netmode_mode').first.click()
+    sleep(5)
 #############################################################################
 
 if __name__ == "__main__":
