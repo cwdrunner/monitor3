@@ -4,7 +4,7 @@
 
  [Service]
  Type=idle
- ExecStart=/usr/bin/python3 /home/pi/projects/monitor3/monitor.py > /home/pi/logs/monitor.log 2>&1
+ ExecStart=/usr/bin/python3 /usr/bin/monitor.py > /var/log/monitor.log 2>&1
 
  [Install]
  WantedBy=multi-user.target

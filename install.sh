@@ -1,9 +1,11 @@
 # Install script for Verizon network monitor
+set -x
 
-cp monitor3.py /usr/bin/monitor3.py
+cp monitor.py /usr/bin/monitor.py
 cp wifi.py /usr/bin/wifi.py
+cp monitor.service /lib/systemd/system/monitor.service
 
 sudo systemctl daemon-reload
-sudo systemctl enable monitor3.service
-sudo systemctl start monitor3.service
-sudo systemctl status monitor3.service
+sudo systemctl enable monitor.service
+sudo systemctl start monitor.service
+sudo systemctl status monitor.service
