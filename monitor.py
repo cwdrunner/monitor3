@@ -24,7 +24,7 @@ def kill_browserdriver():
 def start_wifi():
     print('# restarting wifi ({now})'.format(now=datetime.now()))
     #   os.chdir('/home/jabba/bin.python')
-    process = subprocess.Popen("python3 ./wifi.py", shell=True, stdout=subprocess.PIPE)
+    process = subprocess.Popen("python3 /home/pi/projects/monitor3/wifi.py", shell=True, stdout=subprocess.PIPE)
 
 
 def is_internet_on(method=2):
